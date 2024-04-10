@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_KEY = '42454875-eb3549610f297412779ff13b6'; 
+
+
+/* const API_KEY = '42454875-eb3549610f297412779ff13b6'; 
 
 const fetchImages = async (query, page = 1, perPage = 15) => {
   try {
@@ -19,4 +21,4 @@ const fetchImages = async (query, page = 1, perPage = 15) => {
   }
 };
 
-export { fetchImages };
+export { fetchImages }; */

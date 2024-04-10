@@ -8,17 +8,24 @@ const renderImages = (images) => {
       imgElement.alt = image.tags;
       gallery.appendChild(imgElement);
     });
-  };
-  
-  const renderLoadMoreButton = (callback) => {
+};
+
+const loadMoreBtn = document.querySelector('.load-more');
+
+loadMoreBtn.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    
+});
+
+const renderLoadMoreButton = (callback) => {
     const loadMoreBtn = document.querySelector('.load-more');
     loadMoreBtn.style.display = 'block'; 
     loadMoreBtn.addEventListener('click', callback);
-  };
+};
   
-  const hideLoadMoreButton = () => {
+const hideLoadMoreButton = () => {
     const loadMoreBtn = document.querySelector('.load-more');
     loadMoreBtn.style.display = 'none'; 
-  };
+};
   
-  export { renderImages, renderLoadMoreButton, hideLoadMoreButton };
+export { renderImages, renderLoadMoreButton, hideLoadMoreButton };
