@@ -41,6 +41,16 @@ loaderMoreBtn.addEventListener('click', async () => {
         renderGallery(res);
         hideLoader();
 
+
+        const card = document.querySelector(".card");
+        const cardHeight = card.getBoundingClientRect().height;
+
+        window.scrollBy({
+            left: 0,
+            top: cardHeight * 2,
+            behavior: "smooth"
+        })
+
         if (currentPage * perPage >= totalHits) {
             loaderMoreBtn.classList.add('hide'); 
             iziToast.info({
