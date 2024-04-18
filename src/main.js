@@ -1,9 +1,7 @@
-import {fetchImages} from './js/pixabay-api.js'
+import {fetchImages, currentPage, totalHits, perPage} from './js/pixabay-api.js'
 import {renderGallery} from './js/render-functions.js'
 import iziToast from 'izitoast';
 import "izitoast/dist/css/iziToast.min.css"; 
-import { currentPage, totalHits } from './js/pixabay-api.js';
-
 
 
 const formElem = document.querySelector("#search-form");

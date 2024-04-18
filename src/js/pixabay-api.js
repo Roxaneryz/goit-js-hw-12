@@ -5,10 +5,11 @@ import axios from "axios";
 const API_KEY = '42454875-eb3549610f297412779ff13b6';
 export let currentPage = 1;
 export let totalHits = 0;
- 
-export async function fetchImages (searchImg){
+export const perPage = 15;
+
+export async function fetchImages (searchImg, perPage){
   currentPage = 1;
-  const perPage = 15;
+  
   const url = `https://pixabay.com/api/?key=${API_KEY}&q=${searchImg}&image_type=photo&orientation=horizontal&safesearch=true`;
 
 
