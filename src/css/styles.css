@@ -96,7 +96,7 @@ button:hover {
   100% { transform: rotate(360deg); }
 }
 
-#loadMoreBtn {
+#loaderMoreBtn {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
@@ -109,6 +109,6 @@ button:hover {
   transition: background-color 0.3s ease;
 }
 
-#loadMoreBtn:hover {
+#loaderMoreBtn:hover {
   background-color: #0056b3;
 }
