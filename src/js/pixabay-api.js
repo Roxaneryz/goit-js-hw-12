@@ -7,10 +7,10 @@ export let page = 1;
 export let totalHits = 0;
 export const per_page = 15;
 
-export async function fetchImages (searchImg, per_page, page){
+export async function fetchImages (searchImg){
   page = 1;
   
-  const url = `https://pixabay.com/api/?key=${API_KEY}&q=${searchImg}&image_type=photo&${page}&${per_page}&orientation=horizontal&safesearch=true`;
+  const url = `https://pixabay.com/api/?key=${API_KEY}&q=${searchImg}&image_type=photo&page=${page}&per_page=${per_page}&orientation=horizontal&safesearch=true`;
 
 
 try {
