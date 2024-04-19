@@ -6,9 +6,9 @@ import axios from "axios";
 const btnLoaderMore = document.querySelector('.hide');
 
 const API_KEY = '42454875-eb3549610f297412779ff13b6';
-export let page = 1;
+let page = 1;
 export let totalHits = 0;
-export const per_page = 15;
+const per_page = 15;
 
 export async function fetchImages (searchImg, page, per_page){
   page = 1;

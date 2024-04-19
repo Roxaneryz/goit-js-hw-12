@@ -1,4 +1,4 @@
-import {fetchImages, page, totalHits, per_page} from './js/pixabay-api.js'
+import {fetchImages,totalHits } from './js/pixabay-api.js'
 import {renderGallery} from './js/render-functions.js'
 import iziToast from 'izitoast';
 import "izitoast/dist/css/iziToast.min.css"; 
