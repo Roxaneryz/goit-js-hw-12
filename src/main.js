@@ -1,4 +1,4 @@
-import {fetchImages, currentPage, totalHits, perPage} from './js/pixabay-api.js'
+import {fetchImages, page, totalHits, per_page} from './js/pixabay-api.js'
 import {renderGallery} from './js/render-functions.js'
 import iziToast from 'izitoast';
 import "izitoast/dist/css/iziToast.min.css"; 
@@ -25,7 +25,7 @@ try{
             loaderMoreBtn.classList.remove('hide');
 
         }  catch (error) {
-            console.error('Error fetching images:', error);
+            console.log(error);
             hideLoader();
         }
         
@@ -49,7 +49,7 @@ loaderMoreBtn.addEventListener('click', async () => {
             behavior: "smooth"
         })
 
-        if (currentPage * perPage >= totalHits) {
+        if (page * per_page >= totalHits) {
             loaderMoreBtn.classList.add('hide'); 
             iziToast.info({
               position: "center",
@@ -60,7 +60,7 @@ loaderMoreBtn.addEventListener('click', async () => {
 
 
     } catch (error) {
-       
+       console.log(error);
         hideLoader();
     }
 });

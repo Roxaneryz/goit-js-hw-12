@@ -3,14 +3,14 @@ import "izitoast/dist/css/iziToast.min.css";
 import axios from "axios";
 
 const API_KEY = '42454875-eb3549610f297412779ff13b6';
-export let currentPage = 1;
+export let page = 1;
 export let totalHits = 0;
-export const perPage = 15;
+export const per_page = 15;
 
-export async function fetchImages (searchImg, perPage){
-  currentPage = 1;
+export async function fetchImages (searchImg, per_page, page){
+  page = 1;
   
-  const url = `https://pixabay.com/api/?key=${API_KEY}&q=${searchImg}&image_type=photo&orientation=horizontal&safesearch=true`;
+  const url = `https://pixabay.com/api/?key=${API_KEY}&q=${searchImg}&image_type=photo&${page}&${per_page}&orientation=horizontal&safesearch=true`;
 
 
 try {
@@ -25,7 +25,7 @@ try {
     totalHits = data.totalHits;
 
       if(data.hits.length > 0){
-        currentPage += 1;
+        page += 1;
         return data.hits
       }
       else {
