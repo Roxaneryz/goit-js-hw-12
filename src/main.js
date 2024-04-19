@@ -11,6 +11,7 @@ const loaderMoreBtn = document.querySelector(".loader-more")
 
 let userQuery = "";
 
+
 formElem.addEventListener('submit', async (e) => {
     e.preventDefault();
     userQuery =  formElem.elements.input.value;
@@ -22,7 +23,7 @@ try{
             hideLoader();
             clearForm();
 
-            loaderMoreBtn.classList.remove('hide');
+          loaderMoreBtn.classList.remove('hide');
 
         }  catch (error) {
             console.log(error);
@@ -33,9 +34,11 @@ try{
 
 loaderMoreBtn.addEventListener('click', async () => {
     showLoader();
-
+    
     try {
-        const res = await fetchImages(userQuery);
+        page +=1;
+        const res = await fetchImages(userQuery, page);
+       
         renderGallery(res);
         hideLoader();
 
