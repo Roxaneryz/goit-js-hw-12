@@ -42,7 +42,6 @@ loaderMoreBtn.addEventListener('click', async () => {
         renderGallery(res);
         hideLoader();
 
-
         const card = document.querySelector(".card");
         const cardHeight = card.getBoundingClientRect().height;
 

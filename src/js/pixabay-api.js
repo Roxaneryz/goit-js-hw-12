@@ -26,6 +26,7 @@ try {
     const data = response.data;
 
     totalHits = data.totalHits;
+    
 
       if(data.hits.length > 0){
         page += 1;
@@ -49,8 +50,13 @@ try {
 
         
       });
-      btnLoaderMore.classList.add('hide');
+      // hideLoderMore ();
       return [];
     }
    
     }
+
+    // function hideLoderMore (){
+    
+    //   btnLoaderMore.classList.add('hide');
+    // }
