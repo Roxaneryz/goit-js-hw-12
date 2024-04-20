@@ -1,27 +1,34 @@
-
-import SimpleLightbox from "simplelightbox"
-import "simplelightbox/dist/simple-lightbox.min.css";
-
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
-  captionPosition: 'bottom'
-
+  captionPosition: 'bottom',
 });
-export function renderGallery(images) {
-    const galleryContainer = document.getElementById('gallery');
-    galleryContainer.innerHTML = images.map(createImageCard).join('');
 
-    
-     lightbox.refresh();
-   
-  }
-  
-  function createImageCard(image) {
-    const { webformatURL, largeImageURL, tags, likes, views, comments, downloads } = image;
-  
-    return `<li class="card">
+const galleryContainer = document.getElementById('gallery');
+
+export function renderGallery(images) {
+  const markup = images.map(createImageCard).join('');
+
+  galleryContainer.insertAdjacentHTML('beforeend', markup);
+
+  lightbox.refresh();
+}
+
+function createImageCard(image) {
+  const {
+    webformatURL,
+    largeImageURL,
+    tags,
+    likes,
+    views,
+    comments,
+    downloads,
+  } = image;
+
+  return `<li class="card">
     <a href=${largeImageURL} > <img
       src="${webformatURL}"
       alt="${tags}"
@@ -32,11 +39,5 @@ export function renderGallery(images) {
       <li class="li-text"><span>Likes</span><span>${likes}</span></li>
       <li class="li-text"><span>Download</span><span>${downloads}</span></li>
     </ul>
-  </li>`
-
-  
-  } 
-  
-
-
-
+  </li>`;
+}
